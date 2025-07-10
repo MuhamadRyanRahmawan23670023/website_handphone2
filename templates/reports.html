@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.title}}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-900">📊 Reports</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/admin" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                    <a href="/admin/products" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Products</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white shadow rounded-lg">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-900">Generate Reports</h3>
+                <p class="text-sm text-gray-600 mt-1">Download product reports in PDF or Excel format</p>
+            </div>
+            <div class="px-6 py-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- PDF Report -->
+                    <div class="border rounded-lg p-6 hover:shadow-md transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="p-3 bg-red-100 rounded-full">
+                                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">PDF Report</h4>
+                                <p class="text-sm text-gray-600">Generate a formatted PDF report</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Create a comprehensive PDF report containing all product information including ID, name, brand, model, price, and stock levels.</p>
+                        <a href="/admin/reports/pdf" class="w-full bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 text-center block">
+                            Download PDF Report
+                        </a>
+                    </div>
+
+                    <!-- Excel Report -->
+                    <div class="border rounded-lg p-6 hover:shadow-md transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="p-3 bg-green-100 rounded-full">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Excel Report</h4>
+                                <p class="text-sm text-gray-600">Generate an Excel spreadsheet report</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Export all product data to an Excel file for further analysis and processing. Includes all fields and timestamps.</p>
+                        <a href="/admin/reports/excel" class="w-full bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 text-center block">
+                            Download Excel Report
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Report Information -->
+                <div class="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <h3 class="text-sm font-medium text-blue-800">Report Information</h3>
+                            <div class="mt-2 text-sm text-blue-700">
+                                <p>Reports are generated in real-time and include all current product data. The reports contain:</p>
+                                <ul class="mt-1 list-disc list-inside">
+                                    <li>Product ID, Name, Brand, and Model</li>
+                                    <li>Current Price and Stock Levels</li>
+                                    <li>Product Description</li>
+                                    <li>Creation and Update Timestamps</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

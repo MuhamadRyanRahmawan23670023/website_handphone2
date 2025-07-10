@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.title}}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-900">📱 Handphone Shop</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="/admin" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Admin</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-4">Premium Handphone Collection</h1>
+                <p class="text-xl mb-8">Discover the latest smartphones from top brands</p>
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <input type="search" placeholder="Search handphones..." class="w-96 px-6 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-white">
+                        <button class="absolute right-2 top-2 bg-blue-600 text-white px-4 py-1 rounded-full hover:bg-blue-700">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Featured Products</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {{range .products}}
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <div class="aspect-w-1 aspect-h-1 bg-gray-200">
+                    <img src="{{.Image}}" alt="{{.Name}}" class="w-full h-48 object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg text-gray-900 mb-2">{{.Name}}</h3>
+                    <p class="text-sm text-gray-600 mb-2">{{.Brand}} • {{.Model}}</p>
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">{{.Description}}</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-blue-600">Rp {{printf "%.0f" .Price}}</span>
+                        <span class="text-sm text-gray-500">Stock: {{.Stock}}</span>
+                    </div>
+                    <button class="w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-200">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            {{end}}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-lg font-semibold mb-4">Handphone Shop</h3>
+                <p class="text-gray-400">Your trusted partner for premium smartphones</p>
+                <div class="mt-4 flex justify-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">About</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Contact</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
